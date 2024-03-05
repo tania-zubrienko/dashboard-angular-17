@@ -1,0 +1,44 @@
+<app-title title="Trigger Options"/>
+
+<section>
+  <h1 class="text-xl">On Interactions</h1>
+  <hr class="my-2 mb-5">
+  @defer (on interaction) {
+    <app-heavy-loaders-fast> Heavy loader</app-heavy-loaders-fast>
+  } @placeholder {
+    <div class="w-40 h-100 bg-cyan-200 text-center">
+      <p class="my-auto">Click me</p>
+    </div>
+  }
+</section>
+
+<section class="mt-11">
+  <hr class="my-2 mb-5">
+  @defer (on interaction (btnInteraction)) {
+    <app-heavy-loaders-fast> Heavy loader</app-heavy-loaders-fast>
+  } @placeholder {
+    <div class="w-40 h-16 bg-cyan-200 text-center"> Button interaction</div>
+  }
+  <button #btnInteraction
+    class="mt-5 p-2 bg-blue-500 transition-all rounded text-white">
+    Click me
+  </button>
+</section>
+
+<section class="mt-11">
+  <hr class="my-2 mb-5">
+  @defer (on hover) {
+    <app-heavy-loaders-fast> Heavy loader</app-heavy-loaders-fast>
+  } @placeholder {
+    <div class="w-40 h-16 bg-cyan-200 text-center"> Hover interaction</div>
+  }
+</section>
+
+<section class="mt-11">
+  <hr class="my-2 mb-5">
+  @defer (on hover; prefetch on idle) {
+    <app-heavy-loaders-fast> Heavy loader</app-heavy-loaders-fast>
+  } @placeholder {
+    <div class="w-40 h-16 bg-cyan-200 text-center"> Multiple interaction conditions</div>
+  }
+</section>
